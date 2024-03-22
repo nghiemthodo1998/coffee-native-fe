@@ -3,8 +3,8 @@ import React, {FC} from 'react';
 import styles from './style';
 import useDetailScreen, {DetailScreenProps} from './hook';
 
-const DetailScreen: FC<DetailScreenProps> = () => {
-  const {} = useDetailScreen({});
+const DetailScreen: FC<DetailScreenProps> = props => {
+  const {} = useDetailScreen(props);
   return (
     <View>
       <Text>DetailScreen</Text>

@@ -3,8 +3,8 @@ import React, {FC} from 'react';
 import styles from './style';
 import usePaymentScreen, {PaymentScreenProps} from './hook';
 
-const PaymentScreen: FC<PaymentScreenProps> = () => {
-  const {} = usePaymentScreen({});
+const PaymentScreen: FC<PaymentScreenProps> = props => {
+  const {} = usePaymentScreen(props);
   return (
     <View>
       <Text>PaymentScreen</Text>
