@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import styles from './style';
 import useTabNavigator, {TabNavigatorProps} from './hook';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-// import {BlurView} from '@react-native-community/blur';
+import {BlurView} from '@react-native-community/blur';
 import {CustomIcon} from '../../components/CustomIcon';
 import {COLORS} from '../../theme/theme';
 
@@ -13,8 +13,8 @@ import OrderHistoryScreen from '../../screens/OrderHistoryScreen';
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator: FC<TabNavigatorProps> = () => {
-  const {} = useTabNavigator({});
+const TabNavigator: FC<TabNavigatorProps> = props => {
+  const {} = useTabNavigator(props);
   return (
     <Tab.Navigator
       screenOptions={{
@@ -22,13 +22,13 @@ const TabNavigator: FC<TabNavigatorProps> = () => {
         tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBarStyle,
-        // tabBarBackground: () => (
-        //   <BlurView
-        //     overlayColor=""
-        //     blurAmount={15}
-        //     style={styles.blurViewStyle}
-        //   />
-        // ),
+        tabBarBackground: () => (
+          <BlurView
+            overlayColor=""
+            blurAmount={15}
+            style={styles.blurViewStyle}
+          />
+        ),
       }}>
       <Tab.Screen
         name="Home"
